@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    body button { margin: 8 px; padding: 4px; background: black; border: 1px solid white; color: white; border-radius: 3px; }
+    body button:hover { background: white; color: black; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BoltBox Firmware</title>
+  <link id="base_css" rel="stylesheet" href="base.css">
+  <link id="prov_css" rel="stylesheet">
+  <script src="epg.js"></script>
+</head>
+
+<body>
+  <div class="epg">
+    <div class="header">
+      <img src="" alt="" id="logo" height="64px"> <span id="hd"></i></td>
+      <span id="timecol">...</span>
+    </div>
+	<div class="row" height="100%" id="mainmenu">
+	  <table width="100%"><tr>
+	    <td width="50%">
+	      <ul>
+	        <li><a href="#epg" onclick="servicecheck(guide)" id="epg">#ProgramGuide</a></li>
+	        <li><a href="#dvr" id="dvr">#DVRRecordings</a></li>
+	        <li><a href="#web" id="web">#InternetBrowser</a></li>
+	        <li><a href="#ptv" id="ptv">#PublicAccessTV</a></li>
+	        <li>&nbsp;</li>
+	        <li><a href="#abt" id="abt">#About</a></li>
+	        <li><a href="#hax" id="hax">#Settings</a></li>
+	        <li><a href="#rsc" id="rsc">#Rescan</a></li>
+	        <li><a href="#rbt" id="rbt">#Reboot</a></li>
+	      </ul>
+	    </td>
+	    <td>
+	      <div id="tele" style="width: 320px; height: 240px; margin: auto; border: 2px solid white; color: white; font-family: sans-serif; font-size: 16pt; text-align: center;">
+            <br>
+               No program is playing.<br><br>
+	           Press Play on your remote or select a program from the Guide.
+	      </div>
+	    </td>
+	  </tr></table>
+	</div>
+	<div>
+	  <div class="footer">
+	    <b id="dvhs_status">No D-VHS recorder is connected.</b> <span id="dvr_status">DVR will be limited to HDD only.</span><br>
+	    <span id="hdd_size">305MB free on HDD1</span> / <span id="dvhs_size">No VCR connected</span> 
+	  </div>
+	</div>
+	<script>
+	  var time = document.getElementById("timecol");
+	  window.setInterval(
+	    function () { time.innerHTML = getTime(); },
+	    250
+	  );
+	</script>
+  </div>
+  <div id="blackout" style="display: none; width: 720px; height: 480px;">
+    &nbsp;
+  </div>
+  <center id="debug" style="margin-top: 10px;">
+    <button onclick="toggle_connect_vcr()">Connect D-VHS</button>
+    <button onclick="upgrade_hdd()">Upgrade HDD</button>
+    <button onclick="unplug()">Unplug/Replug Power</button>
+    <button onclick="cycle(providers)" id="cycle">Change provider: None</button>
+  </center>
+  <script>
+    var providers = [ NoProvider, DirecTVProvider, DishProvider ]
+    loadProvider(providers[0]);
+  </script>
+</body>
+
+</html>

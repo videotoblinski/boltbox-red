@@ -1,0 +1,43 @@
+    @font-face {
+      font-family: dtv;
+      src: url(fonts/directv.ttf);
+    }
+	html {
+	  background: linear-gradient(to bottom, navy, blue, navy);
+      background-size: cover;
+      background-repeat: none none;
+	}
+	.header {
+      padding-top: 12px;
+	  background: rgb(73,0,0);
+	  background: linear-gradient(to bottom, white, #eeeeee);
+      border: none;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+	}
+    #hd { color: white; background: orange; padding-left: 3px; padding-right: 3px; padding-top: 2px; font-weight: bold; border-radius: 4px; }
+    .header *, .footer * { font-family: dtv !important; }
+    .footer {
+      background: white;
+      color: black;
+      border-top: 1px solid black;
+	}
+    #tele { background: navy; }
+    #timecol {
+      vertical-align: bottom;
+      color: black;
+    }
+    .row ul li a {
+      border-radius: 4px;
+      border: 1px solid cyan;
+      background: #1c1c3b;
+      color: white !important;
+    }
+    .row ul li a:hover, .row ul li a:focus {
+      background: linear-gradient(to bottom, blue, navy);
+      outline: none;
+    }
+    .row ul li a:active {
+      background: linear-gradient(to bottom, navy, blue);
+      outline: none;
+    }

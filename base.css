@@ -1,0 +1,86 @@
+    html { background: black; height: 100%; }
+    body {
+      margin: 0px;
+    }
+	.epg {
+	  color: white;
+	  font-family: monospace;
+	}
+	#namecol, #timecol {
+	  font-family: sans-serif;
+	}
+    #timecol {
+      text-align: right;
+    }
+	.header {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+	  padding: 18px;
+	  padding-top: 36px;
+	  padding-bottom: 8px;
+	  background: black;
+      border-bottom: 1px solid white;
+	}
+    .footer {
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      width: 100%; 
+	  padding: 18px;
+	  padding-top: 8px;
+	  padding-bottom: 18px;
+      background: black;
+      border-top: 1px solid white;
+	}
+    .row {
+      margin-top: 112px;
+    }
+    .row ul {
+      list-style: none;
+    }
+    .row ul li {
+      padding: 1px;
+    }
+    .row ul li a {
+      display: block;
+      border: 1px solid white;
+      background: black;
+      padding: 6px;
+      padding-left: 12px;
+      color: white;
+      font-variant: small-caps;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .row ul li a:hover, .row ul li a:focus {
+      background: yellow;
+      color: black;
+      outline: none;
+    }
+    .row ul li a:active {
+      background: blue;
+      outline: none;
+    }
+    table, tr, th, td, tbody { padding: 0px; margin: 0px; }
+    #hd { font-variant: small-caps; }
+    #guide { vertical-align: top; }
+    .guide {
+      background: black;
+      border: 1px solid white;
+      width: 100%;
+      padding: 1px;
+    }
+    .guide td {
+      padding: 6px;
+      font-family: sans-serif;
+      background: black;
+      border: 1px solid white;
+    }
+    .guide td:hover {
+      background: white;
+      color: black;
+      cursor: pointer;
+    }
+    center#debug { position: fixed; top: 12px; left: 12px; }

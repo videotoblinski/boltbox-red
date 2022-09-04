@@ -1,0 +1,58 @@
+    <table width="720px" height="480px" style="margin:0px;" >
+      <tr>
+        <td class="header">
+          <table width="100%">
+            <tr>
+              <td width="50%" id="namecol"><img src="" alt="" id="logo" height="64px"> <span id="hd"></i></td>
+              <td width="50%" id="timecol">...</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="row" height="100%" id="mainmenu">
+          <table width="100%"><tr>
+            <td width="50%">
+              <ul>
+                <li><a href="#epg" onclick="servicecheck(function(){guide()})" id="epg">#ProgramGuide</a></li>
+                <li><a href="#dvr" id="dvr">#DVRRecordings</a></li>
+                <li><a href="#web" id="web">#InternetBrowser</a></li>
+                <li><a href="#ptv" id="ptv">#PublicAccessTV</a></li>
+                <li>&nbsp;</li>
+                <li><a href="#abt" id="abt">#About</a></li>
+                <li><a href="#hax" id="hax">#Settings</a></li>
+                <li><a href="#rsc" id="rsc">#Rescan</a></li>
+                <li><a href="#rbt" id="rbt">#Reboot</a></li>
+              </ul>
+            </td>
+            <td width="50%">
+              <div id="tele" style="width: 320px; height: 240px; margin: auto; border: 2px solid white; color: white; font-family: sans-serif; font-size: 16pt; text-align: center;">
+                <br>
+                No program is playing.<br><br>
+                Press Play on your remote or select a program from the Guide.
+              </div>
+            </td>
+          </tr></table>
+        </td>
+        <td class="row" height="100%" id="guide" style="display: none" width="100%">
+          <table class="guide">
+            <tr><td>Channel</td><td>11:00 PM</td><td>12:00 AM</td><td>1:00 AM</td></tr>
+            <tr><td>KIND 15</td><td>Digital Transition PSA</td><td>Digital Transition PSA</td><td>Digital Transition PSA</td></tr>
+          </table>
+          <a href="#" onclick="main()">Exit</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="footer">
+          <b id="dvhs_status">No D-VHS recorder is connected.</b> <span id="dvr_status">DVR will be limited to HDD only.</span><br>
+          <span id="hdd_size">305MB free on HDD1</span> / <span id="dvhs_size">No VCR connected</span> 
+        </td>
+      </tr>
+    </table>
+    <script>
+      var time = document.getElementById("timecol");
+      window.setInterval(
+        function () { time.innerHTML = getTime(); },
+        250
+      );
+    </script>
